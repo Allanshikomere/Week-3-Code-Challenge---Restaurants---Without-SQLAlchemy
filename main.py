@@ -143,14 +143,13 @@ class Customer:
             return max_rating.restaurant()
         return None
 
-# Create tables and establish relationships
 def create_tables():
     Customer.create_table()
     Restaurant.create_table()
     Review.create_table()
 create_tables()
 
-# Example: Adding customers
+# Adding customers
 customer1 = Customer("Llyod", "Nyabuto")
 customer2 = Customer("Larry", "Mmbiso")
 customer3 = Customer("Meshack", "Omondi")
@@ -166,7 +165,7 @@ restaurant1.add_review(customer2, 5)
 restaurant2.add_review(customer1, 3)
 restaurant3.add_review(customer3, 4.5)
 
-# Fetch and print reviews for each restaurant
+# Fetch  reviews for each restaurant
 for restaurant in [restaurant1, restaurant2, restaurant3]:
     print(f"\nReviews for {restaurant.name} ({restaurant.count_reviews()} reviews):")
     reviews = restaurant.all_reviews()
